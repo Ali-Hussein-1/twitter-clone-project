@@ -7,8 +7,8 @@ $email = $_POST["email"];
 $pass = $_POST["password"];
 
 
-$query =$mysqli->prepare("INSERT INTO `users` (`password`, `email`, `user_name`,)
- VALUES (?, ?, ?)");
+$query =$mysqli->prepare("INSERT INTO `users` (`id`, `password`, `email`, `user_name`, `following count`)
+ VALUES (NULL, ?, ?, ?, NULL)");
 $query->bind_param("sss", $pass, $email, $name );
 $query->execute();
 
