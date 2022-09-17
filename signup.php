@@ -4,7 +4,7 @@ include("connections.php");
 
 $name = $_POST["user_name"];
 $email = $_POST["email"];
-$pass = $_POST["password"];
+$pass = hash("sha256", $_POST["password"]);
 
 
 $query =$mysqli->prepare("INSERT INTO `users` (`id`, `password`, `email`, `user_name`, `following count`)
