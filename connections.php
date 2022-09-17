@@ -3,7 +3,7 @@
 $host = "localhost";
 $db_user = "root";
 $db_pass = null;
-$db_name = "fswo5db";
+$db_name = "twitter_db";
 
 $mysqli = new mysqli($host, $db_user, $db_pass, $db_name);
 
