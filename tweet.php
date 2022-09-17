@@ -1,8 +1,9 @@
 <?php
 include("connections.php");
 $tweet = $_POST['text'];
-$query = $mysqli -> prepare("INSERT INTO `tweets` (`text`, `timestamp`, `photo`) VALUES (?, NULL, NULL)");
-$query->bind_param("s", $tweet);
+$photo = $_POST['photo'];
+$query = $mysqli -> prepare("INSERT INTO `tweets` (`text`, `timestamp`, `photo`) VALUES (?, NULL,?)");
+$query->bind_param("ss", $tweet, $photo);
 $query->execute(); 
 $response = [];
 $response["success"] = true;
