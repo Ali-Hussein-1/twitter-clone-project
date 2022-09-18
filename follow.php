@@ -7,9 +7,9 @@ include("connections.php");
 $follower = $_POST["follower_id"];
 $followed = $_POST["followed_id"];
 
-$statement =$mysqli->prepare("INSERT INTO `followers` (`follower_id`, `followed_id`) VALUE(?,?)");
-$statement->bind_param("ii", $follower, $followed);
-$statement->execute();
+$insert_query =$mysqli->prepare("INSERT INTO `followers` (`follower_id`, `followed_id`) VALUE(?,?)");
+$insert_query->bind_param("ii", $follower, $followed);
+$insert_query->execute();
 $response = [];
 $response["success"] = true;
 

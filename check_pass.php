@@ -5,9 +5,9 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorizatio
 include("connections.php");
 
 $pass = hash("sha256" , $_POST["password"]);
-$query = $mysqli->prepare("SELECT password FROM users WHERE password = '$pass' ");
-$query->execute();
-$array = $query -> get_result();
+$select_query = $mysqli->prepare("SELECT password FROM users WHERE password = '$pass' ");
+$select_query->execute();
+$array = $select_query -> get_result();
 
 $response = [];
 

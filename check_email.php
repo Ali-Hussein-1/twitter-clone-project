@@ -5,9 +5,9 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorizatio
 include("connections.php");
 
 $email = $_POST["email"];
-$query = $mysqli->prepare("SELECT email FROM users WHERE email = '$email' ");
-$query->execute();
-$array = $query -> get_result();
+$select_query = $mysqli->prepare("SELECT email FROM users WHERE email = '$email' ");
+$select_query->execute();
+$array = $select_query -> get_result();
 
 $response = [];
 

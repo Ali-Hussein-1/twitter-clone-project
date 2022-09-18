@@ -11,10 +11,10 @@ $email = $_POST["email"];
 $pass = hash("sha256" , $_POST["password"]);
 
 
-$query =$mysqli->prepare("INSERT INTO `users` (`id`, `password`, `email`, `user_name`, `profile_img`)
+$insert_query =$mysqli->prepare("INSERT INTO `users` (`id`, `password`, `email`, `user_name`, `profile_img`)
  VALUES (NULL, ?, ?, ?, NULL)");
-$query->bind_param("sss", $pass, $email, $name );
-$query->execute();
+$insert_query->bind_param("sss", $pass, $email, $name );
+$insert_query->execute();
 
 $response = [];
 $response["success"] = true;
