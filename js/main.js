@@ -1,13 +1,9 @@
-
-
-
-
 const twTxtContent = document.getElementById("text-content")
-const addTweet = document.getElementById("btn")
+const btn = document.getElementById("btn")
 const tweets = document.getElementById("show")
 let newTweetContent = document.createElement("div")
-
-addTweet.onclick = (e) => {
+// add tweet content whenever user click the button
+btn.onclick = (e) => {
     console.log("dd")
   e.preventDefault()
   newTweetContent.classList.add("new-content")
@@ -29,14 +25,9 @@ addTweet.onclick = (e) => {
   tweets.appendChild(newTweetContent)
 }
 
-
-let btn=document.getElementById("btn-clicked")
-
 getResponse=function()
 {
    
-
-    console.log("hello")
      const tweet=document.getElementById("text-content").value
      const formData = new FormData()
      formData.append("text",tweet)
@@ -50,7 +41,6 @@ getResponse=function()
       .then(response =>{
            response.json() 
           console.log(response)})
-
 }
 
 btn.addEventListener('click',getResponse)
