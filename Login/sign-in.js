@@ -1,8 +1,8 @@
 const signIn = document.getElementById("sign-in");
 const signUp = document.getElementById("sign-up");
-const check=False
-const error = document.getElementById("error")
 
+const error = document.getElementById("error")
+// navegiat
 register=function(){
     window.location.href='http://localhost/twitter-clone-project/register/sign-up.html'
 }
@@ -24,9 +24,7 @@ checkLogin=function()
     }
     else{
         error.innerHTML="invalied username or password"
-    }
-    
-   
+    } 
 }
 
 signIn.addEventListener('click',checkLogin)
