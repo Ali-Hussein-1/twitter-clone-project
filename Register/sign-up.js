@@ -1,9 +1,7 @@
-// let signIn = document.getElementById("sign-in");
+
 let signUp = document.getElementById("sign-up-btn")
 
 //Storing users email and password
-
-
 function store()
 {
     let email = document.getElementById("email-address").value
@@ -12,35 +10,49 @@ function store()
     localStorage.setItem('email',email)
     localStorage.setItem('password', password)
     localStorage.setItem('username', username)
-   
+
+    
+//         let data = {
+//             "email": email,
+//             "username": username,
+//             "password": password
+//         }
+
+    
+//          fetch("http://localhost/twitter-clone-project/send.php", {
+//             method: "POST",
+//             body: new URLSearchParams(data)
+//         })
+//         .then(respone => respone.json())
+//         .then(data => console.log(data))
+    
+// 
+
+
+
+    
+  
+  
+      
+     const formData = new FormData()
+     formData.append("username",username)
+     formData.append("email",email)
+     formData.append("password",password)
+     
+     console.log(formData)
+      fetch('http://localhost/twitter-clone-project/signup.php', {
+          method: 'POST',
+          body:formData
+      })
+      .then(response =>{
+          // response.json() 
+          console.log(response)})
+         
+    
+
+  
+
 }
-
-
-
-// function checkLogin()
-// {
-    
-//     //get  data from localstorage
-//     let emailStored = localStorage.getItem('email')
-//     let passwordStored = localStorage.getItem('password')
-//     console.log(emailStored)
-
-//     //data entered from user
-//     let emailInput = document.querySelector('.check-email').value
-//     let passwordInput = document.querySelector('.check-password').value
-
-//     if(emailInput == emailStored)
-//     {
-//         console.log("success")
-       
-    
-    
-//     }
-//     if(passwordInput == passwordStored)
-//     {
-//         console.log("success")
-//     }
-   
-// }
-
 signUp.addEventListener('click',store)
+
+  
